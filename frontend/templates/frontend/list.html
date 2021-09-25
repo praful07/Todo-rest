@@ -123,7 +123,7 @@
         function buildlist() {
             var wrapper = document.getElementById('list-wrapper')
             wrapper.innerHTML = ''
-            var url = 'http://127.0.0.1:8000/api/task-list/'
+            var url = 'https://todo-rest-project.herokuapp.com/api/task-list/'
 
             fetch(url)
                 .then((resp) => resp.json())
@@ -172,10 +172,10 @@
             e.preventDefault()
             console.log("Form Submited")
 
-            var url = 'http://127.0.0.1:8000/api/task-create/'
+            var url = 'https://todo-rest-project.herokuapp.com/api/task-create/'
 
             if(activeItem != null){
-                url = `http://127.0.0.1:8000/api/task-update/${activeItem.id}/`
+                url = `https://todo-rest-project.herokuapp.com/api/task-update/${activeItem.id}/`
                 activeItem = null
             }
 
@@ -205,7 +205,7 @@
         function deleteItem(item){
             console.log("delete clicked")
             
-            fetch(`http://127.0.0.1:8000/api/task-delete/${item.id}/`,{
+            fetch(`https://todo-rest-project.herokuapp.com/api/task-delete/${item.id}/`,{
                 method:'DELETE',
                 headers:{
                     'Content-type': 'application/json',
