@@ -17,7 +17,7 @@ def apiOverview(request):
         'Update':'/task-update/<str:pk>/',
         'Delete':'task-delete/<str:pk>/'
     }
-    return render(request,'api/t.html')
+    return Response(api_urls)
 
 @api_view(['GET'])
 def taskList(request):
